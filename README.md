@@ -1,4 +1,4 @@
-# ARES-EVA · Vista desde el casco
+# CURIOSITY-EVA · Vista desde el casco
 
 Prototipo web de un traje EVA para Marte con asistente HoloConnect AI.
 
