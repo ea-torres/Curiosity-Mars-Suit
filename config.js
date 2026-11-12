@@ -30,7 +30,7 @@ const base={fc:72,pa:"118/76",glu:92,fat:18,hid:88};
 const S={
 nominal:{l:"",v:base,f:{},t:"Stable stats",m:"No deviations. Spontaneous monitoring og breath, sweat, and neurochemical status.",a:[]},
 fatiga:{l:"warn",v:{...base,fc:96,fat:71,hid:70},f:{fat:"w",hid:"w"},t:"  Accumulated Fatigue",m:"High lactato in sweat and increasing cortisol. Possible electrolyte or B12 complex defficiency.",a:[["Topical patch: cB complex and magnesium","top"],["B12 injection","inj"],["15 minute rest","non"]]},
-glucosa:{l:"warn",v:{...base,fc:88,glu:58,fat:55},f:{glu:"c",fat:"w"},t:"Azúcar baja en sangre",m:"La acetona en el aliento y la glucosa en sudor coinciden: posible hipoglucemia leve.",a:[["Gel de glucosa por puerto del casco","non"],["Parche tópico de electrolitos","top"]]},
+  glucosa:{l:"warn",v:{...base,fc:88,glu:58,fat:55},f:{glu:"c",fat:"w"},t:"Low blood sugar",m:"Possible minor hypoglycemia",a:[["Glucose gel through helmet's breather","non"],["t  opic patch with electrolytes","top"]]},
 presion:{l:"warn",v:{...base,fc:104,pa:"152/96",fat:40},f:{pa:"c",fc:"w"},t:"Presión arterial elevada",m:"Tendencia sostenida al alza con ritmo cardiaco alto. Baja el esfuerzo y revisa la hidratación.",a:[["Respiración guiada 4-6","non"],["Parche tópico: magnesio y potasio","top"],["Inyección de micronutrientes (doble confirmación)","inj"]]},
 herida:{l:"crit",v:{...base,fc:118,pa:"140/90",fat:45},f:{fc:"c",pa:"w"},t:"Herida en el guante derecho",m:"Cámara y sensor de presión detectan rotura con pérdida de presión local. Prioriza el sellado.",a:[["Abrir guía holográfica","holo"]]}
 };
