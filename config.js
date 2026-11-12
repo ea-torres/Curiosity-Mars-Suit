@@ -36,10 +36,10 @@ herida:{l:"crit",v:{...base,fc:118,pa:"140/90",fat:45},f:{fc:"c",pa:"w"},t:"Woun
 };
 
 // ---- ETIQUETAS DE LOS SIGNOS VITALES [nombre, unidad, sensor] ----
-const L={fc:["Pulse","lpm","suit"],pa:["Presión","mmHg","optic"],glu:["Glucose","mg/dL","sweat"],fat:["Fatigue","/100","neuro"],hid:["Hydration","%","sweat"]};
+const L={fc:["Pulse","lpm","suit"],pa:["Pressure","mmHg","optic"],glu:["Glucose","mg/dL","sweat"],fat:["Fatigue","/100","neuro"],hid:["Hydration","%","sweat"]};
 
 // ---- PASOS DE LA GUÍA HOLOGRÁFICA DE LA HERIDA [título, texto] ----
-const HS=[["Stop the bleeding","Press with your free hand over the red area of the hologram."],["Seal the rip","Place the forearm's patch, covering 2 extra cm from the edge."],["Verify blood pressure","El visor confirma cuando la presión local del guante se estabiliza."],["Return to Base","Return route marked on HoloConnect Visor. Notification sent to Mission Control."]];
+const HS=[["Stop the bleeding","Press with your free hand over the red area of the hologram."],["Seal the rip","Place the forearm's patch, covering 2 extra cm from the edge."],["Verify blood pressure","The visor confirms when the glove's local pressure is stabilized."],["Return to Base","Return route marked on HoloConnect Visor. Notification sent to Mission Control."]];
 
 // ---- DIBUJOS SVG DE CADA PASO (coordenadas del guante, viewBox 200x190) ----
 const HG=[`<circle class="pulse" cx="104" cy="125" r="22" fill="none" stroke="#ff5a5a" stroke-width="3"/>`,`<rect class="pulse" x="86" y="108" width="40" height="34" rx="4" fill="rgba(95,227,208,.3)" stroke="#5fe3d0" stroke-width="2"/>`,`<path d="M70 70a34 34 0 0 1 60 0" fill="none" stroke="#ffb347" stroke-width="3"/><circle class="pulse" cx="100" cy="42" r="4" fill="#ffb347"/>`,`<path class="pulse" d="M100 175v-25m-10 10l10 12 10-12" fill="none" stroke="#5fe3d0" stroke-width="3" stroke-linecap="round"/>`];
