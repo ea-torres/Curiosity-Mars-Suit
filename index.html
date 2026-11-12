@@ -3,17 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>CURIOSITY-EVA · Vista desde el casco</title>
+<title>CURIOSITY-EVA · The Astronaut's POV</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=IBM+Plex+Sans:wght@400;500&display=swap">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header>
-  <h1>CURIOSITY-EVA · Vista desde el casco</h1>
-  <p>Así vería el astronauta Marte a través del visor, con la capa de realidad aumentada de HoloConnect AI. Arrastra la vista para mirar alrededor.</p>
+  <h1>CURIOSITY-EVA · The Astronaut's POV</h1>
+  <p>This is how a martian astronaut would looks through its visor, with a layer of augmented reality from HoloConnect AI. Drag to look around.</p>
 </header>
 
-<div id="stage" tabindex="0" role="application" aria-label="Vista del astronauta en Marte. Arrastra o usa las flechas izquierda y derecha para girar la cabeza.">
+<div id="stage" tabindex="0" role="application" aria-label=Astroanut's POV in Mars. Drag or use the left and right arrows to turn your head.">
   <canvas id="c"></canvas>
   <div id="ar"></div>
   <div class="glare"></div>
@@ -22,14 +22,14 @@
     <div id="tape"></div><div id="hdg"></div>
     <div class="pl left" id="vit"></div>
     <div class="pl right">
-      <div class="bar">Oxígeno <b id="o2v"></b><i><span id="o2b"></span></i></div>
-      <div class="bar">Energía <b id="pwv"></b><i><span id="pwb"></span></i></div>
-      <div>Restan <b id="tr"></b> h</div>
+      <div class="bar">Oxygen <b id="o2v"></b><i><span id="o2b"></span></i></div>
+      <div class="bar">Energy <b id="pwv"></b><i><span id="pwb"></span></i></div>
+      <div>Remaining <b id="tr"></b> h</div>
       <small id="lat" style="color:#8fd3c9"></small>
     </div>
     <div id="doc">
       <svg viewBox="0 0 120 130" aria-hidden="true"><g fill="none" stroke="#5fe3d0" stroke-width="2"><circle cx="60" cy="38" r="24"/><path d="M14 126c0-30 20-46 46-46s46 16 46 46z"/><path d="M40 82l20 20 20-20" opacity=".6"/></g><g stroke="#5fe3d0" opacity=".35"><path d="M10 20h100M10 40h100M10 60h100M10 80h100M10 100h100"/></g></svg>
-      <div>Médico de vuelo · Control de Misión<br><span style="color:#8fd3c9">Holograma en directo, retardo simulado de 12 min. HoloConnect AI le envió un resumen de tus sensores.</span></div>
+      <div>Flight Medic · Mission Control<br><span style="color:#8fd3c9">Live Hologram. HoloConnect AI has sent your sensors' data.</span></div>
     </div>
     <svg id="glove" viewBox="0 0 200 190" aria-hidden="true">
       <g fill="#d9d4ce" stroke="#8d8680" stroke-width="2">
@@ -44,21 +44,21 @@
     </svg>
     <div class="pl ai" id="al" aria-live="polite"></div>
   </div>
-  <div id="boot">HoloConnect AI · calibrando visor…</div>
+  <div id="boot">HoloConnect AI · calibrating visor…</div>
 </div>
 
 <div class="ctl">
-  <div class="sc" role="group" aria-label="Simular escenario">
+  <div class="sc" role="group" aria-label="Simulate scenario">
     <button data-s="nominal" class="sel">Normal</button>
-    <button data-s="fatiga">Fatiga</button>
-    <button data-s="glucosa">Azúcar baja</button>
-    <button data-s="presion">Presión alta</button>
-    <button data-s="herida">Herida</button>
+    <button data-s="fatiga">Fatigue</button>
+    <button data-s="glucosa">Low sugar</button>
+    <button data-s="presion">High blood pressure</button>
+    <button data-s="herida">Wound</button>
   </div>
-  <button id="artog" aria-pressed="true">Realidad aumentada: activada</button>
-  <label>Tiempo de EVA <input id="t" type="range" min="0" max="480" value="0"> <b id="tt">T+0:00</b></label>
+  <button id="artog" aria-pressed="true">Augmented Reality: activated</button>
+  <label>EVA Time <input id="t" type="range" min="0" max="480" value="0"> <b id="tt">T+0:00</b></label>
 </div>
-<p class="note">Concepto de diseño: el paisaje es una ilustración generada por código y las lecturas médicas son simuladas. Los sensores de neurotransmisores aún no existen de forma no invasiva, así que el traje los estimaría con cortisol, ritmo cardiaco y su variabilidad. Toda inyección es una propuesta que exige doble confirmación y un protocolo médico definido antes de la misión.</p>
+<p class="note">Design concept.</p>
 
 <script src="config.js"></script>
 <script src="app.js"></script>
