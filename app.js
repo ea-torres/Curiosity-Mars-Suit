@@ -51,18 +51,18 @@ function render(){
   al.innerHTML=`<h3>${sc.t}</h3><p>${sc.m}</p><div class="acts"></div><small id="hint">${sc.a.length?"HoloConnect AI propone; tú decides.":""}</small>`;
   const box=al.querySelector(".acts");
   sc.a.forEach(a=>{const b=document.createElement("button");b.textContent=a[0];if(a[1]==="inj")b.className="inj";b.onclick=()=>act(a,b);box.appendChild(b)});
-  if(sc.a.length){const d=document.createElement("button");d.textContent="Llamar al médico de vuelo";d.onclick=()=>$("doc").classList.toggle("on");box.appendChild(d);
-    const r=document.createElement("button");r.textContent="Rechazar";r.onclick=()=>$("hint").textContent="Propuesta rechazada. El monitoreo continúa.";box.appendChild(r)}
+  if(sc.a.length){const d=document.createElement("button");d.textContent="Call base's medic";d.onclick=()=>$("doc").classList.toggle("on");box.appendChild(d);
+    const r=document.createElement("button");r.textContent="Reject";r.onclick=()=>$("hint").textContent="Proposal rejected. Monitoring ongoing";box.appendChild(r)}
 }
 function act(a,b){
   if(a[1]==="holo"){hs=0;render();return}
-  if(a[1]==="inj"&&armed!==a[0]){armed=a[0];b.textContent="Confirmar inyección ahora";$("hint").textContent="Confirmación 2 de 2: el protocolo fue validado por el comandante médico antes de la misión.";return}
-  sc={...S.nominal,t:"Acción completada",m:(a[1]==="inj"?"Inyección aplicada: ":a[1]==="top"?"Parche aplicado: ":"Realizado: ")+a[0].replace(/ \(.*\)/,"")+". Valores de vuelta al rango seguro; monitoreo reforzado 10 min."};
+  if(a[1]==="inj"&&armed!==a[0]){armed=a[0];b.textContent="Confirmar inyection now";$("hint").textContent="Confirmation 2 of 2: the protocol was validated by the base's doctor before the mission.";return}
+  sc={...S.nominal,t:"Completed action",m:(a[1]==="inj"?"Inyection applied: ":a[1]==="top"?"Patch applied: ":"Doe: ")+a[0].replace(/ \(.*\)/,"")+". Values back to safe range; reforced monitoring for the next 10 min."};
   render();
 }
 function nx(){
   if(hs<3){hs++;render();return}
-  hs=-1;done=true;sc={...S.nominal,l:"warn",t:"Herida sellada",m:"Presión local estable. Mantén el retorno al hábitat y pasa revisión médica."};render();
+  hs=-1;done=true;sc={...S.nominal,l:"warn",t:"Wound sealed",m:"Local pressure stable. Ho backc to base camp for medical check-up."};render();
 }
 document.querySelectorAll(".sc button").forEach(b=>b.onclick=()=>{
   document.querySelectorAll(".sc button").forEach(x=>x.classList.remove("sel"));b.classList.add("sel");
