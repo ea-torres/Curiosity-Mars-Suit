@@ -57,7 +57,7 @@ function render(){
 function act(a,b){
   if(a[1]==="holo"){hs=0;render();return}
   if(a[1]==="inj"&&armed!==a[0]){armed=a[0];b.textContent="Confirm inyection now";$("hint").textContent="Confirmation 2 of 2: the protocol was validated by the base's doctor before the mission.";return}
-  sc={...S.nominal,t:"Completed action",m:(a[1]==="inj"?"Inyection applied: ":a[1]==="top"?"Patch applied: ":"Doe: ")+a[0].replace(/ \(.*\)/,"")+". Values back to safe range; reforced monitoring for the next 10 min."};
+  sc={...S.nominal,t:"Completed action",m:(a[1]==="inj"?"Inyection applied: ":a[1]==="top"?"Patch applied: ":"Do: ")+a[0].replace(/ \(.*\)/,"")+". Values back to safe range; reforced monitoring for the next 10 min."};
   render();
 }
 function nx(){
