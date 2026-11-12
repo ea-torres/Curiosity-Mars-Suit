@@ -28,7 +28,7 @@ const base={fc:72,pa:"118/76",glu:92,fat:18,hid:88};
 // l: nivel ("", "warn", "crit"); v: valores; f: cuáles se marcan (w ámbar, c rojo)
 // t: título; m: mensaje; a: acciones [texto, tipo] con tipo top (parche), inj (inyección), non (otra), holo (guía)
 const S={
-nominal:{l:"",v:base,f:{},t:"Stable stats",m:"No deviations. Spontaneous monitoring og breath, sweat, and neurochemical status.",a:[]},
+nominal:{l:"",v:base,f:{},t:"Stable stats",m:"No deviations. Spontaneous monitoring of breath, sweat, and neurochemical status.",a:[]},
 fatiga:{l:"warn",v:{...base,fc:96,fat:71,hid:70},f:{fat:"w",hid:"w"},t:"  Accumulated Fatigue",m:"High lactato in sweat and increasing cortisol. Possible electrolyte or B12 complex defficiency.",a:[["Topical patch: cB complex and magnesium","top"],["B12 injection","inj"],["15 minute rest","non"]]},
   glucosa:{l:"warn",v:{...base,fc:88,glu:58,fat:55},f:{glu:"c",fat:"w"},t:"Low blood sugar",m:"Possible minor hypoglycemia",a:[["Glucose gel through helmet's breather","non"],["t  opic patch with electrolytes","top"]]},
 presion:{l:"warn",v:{...base,fc:104,pa:"152/96",fat:40},f:{pa:"c",fc:"w"},t:"Presión arterial elevada",m:"Tendencia sostenida al alza con ritmo cardiaco alto. Baja el esfuerzo y revisa la hidratación.",a:[["Respiración guiada 4-6","non"],["Parche tópico: magnesio y potasio","top"],["Inyección de micronutrientes (doble confirmación)","inj"]]},
@@ -36,10 +36,10 @@ herida:{l:"crit",v:{...base,fc:118,pa:"140/90",fat:45},f:{fc:"c",pa:"w"},t:"Heri
 };
 
 // ---- ETIQUETAS DE LOS SIGNOS VITALES [nombre, unidad, sensor] ----
-const L={fc:["Pulso","lpm","traje"],pa:["Presión","mmHg","óptico"],glu:["Glucosa","mg/dL","sudor"],fat:["Fatiga","/100","neuro"],hid:["Hidratación","%","sudor"]};
+const L={fc:["Pulse","lpm","suit"],pa:["Presión","mmHg","optic"],glu:["Glucose","mg/dL","sweat"],fat:["Fatigue","/100","neuro"],hid:["Hydration","%","sweat"]};
 
 // ---- PASOS DE LA GUÍA HOLOGRÁFICA DE LA HERIDA [título, texto] ----
-const HS=[["Detén el sangrado","Presiona con la mano libre sobre la marca roja del holograma."],["Sella la rotura","Coloca el parche del kit del antebrazo, cubriendo 2 cm más allá del borde."],["Verifica la presión","El visor confirma cuando la presión local del guante se estabiliza."],["Regresa al hábitat","Ruta de retorno marcada en el visor. Control de Misión ya fue avisado."]];
+const HS=[["Detén el sangrado","Press with your free hand over the red area of the hologram."],["Seal the rip","Coloca el parche del kit del antebrazo, cubriendo 2 cm más allá del borde."],["Verifica la presión","El visor confirma cuando la presión local del guante se estabiliza."],["Regresa al hábitat","Ruta de retorno marcada en el visor. Control de Misión ya fue avisado."]];
 
 // ---- DIBUJOS SVG DE CADA PASO (coordenadas del guante, viewBox 200x190) ----
 const HG=[`<circle class="pulse" cx="104" cy="125" r="22" fill="none" stroke="#ff5a5a" stroke-width="3"/>`,`<rect class="pulse" x="86" y="108" width="40" height="34" rx="4" fill="rgba(95,227,208,.3)" stroke="#5fe3d0" stroke-width="2"/>`,`<path d="M70 70a34 34 0 0 1 60 0" fill="none" stroke="#ffb347" stroke-width="3"/><circle class="pulse" cx="100" cy="42" r="4" fill="#ffb347"/>`,`<path class="pulse" d="M100 175v-25m-10 10l10 12 10-12" fill="none" stroke="#5fe3d0" stroke-width="3" stroke-linecap="round"/>`];
