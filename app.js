@@ -48,7 +48,7 @@ function render(){
   $("hg").innerHTML=hs>=0?HG[hs]:"";
   armed=null;
   if(hs>=0){const q=HS[hs];al.innerHTML=`<h3>Paso ${hs+1} de 4 · ${q[0]}</h3><p>${q[1]}</p><div class="acts"><button id="nx">${hs===3?"Finalizar guía":"Siguiente paso"}</button></div>`;$("nx").onclick=nx;return}
-  al.innerHTML=`<h3>${sc.t}</h3><p>${sc.m}</p><div class="acts"></div><small id="hint">${sc.a.length?"Powered by HoloConnect AI propone.":""}</small>`;
+  al.innerHTML=`<h3>${sc.t}</h3><p>${sc.m}</p><div class="acts"></div><small id="hint">${sc.a.length?"Powered by HoloConnect AI.":""}</small>`;
   const box=al.querySelector(".acts");
   sc.a.forEach(a=>{const b=document.createElement("button");b.textContent=a[0];if(a[1]==="inj")b.className="inj";b.onclick=()=>act(a,b);box.appendChild(b)});
   if(sc.a.length){const d=document.createElement("button");d.textContent="Call base's medic";d.onclick=()=>$("doc").classList.toggle("on");box.appendChild(d);
