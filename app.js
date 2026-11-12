@@ -56,22 +56,22 @@ function render(){
 }
 function act(a,b){
   if(a[1]==="holo"){hs=0;render();return}
-  if(a[1]==="inj"&&armed!==a[0]){armed=a[0];b.textContent="Confirmar inyection now";$("hint").textContent="Confirmation 2 of 2: the protocol was validated by the base's doctor before the mission.";return}
+  if(a[1]==="inj"&&armed!==a[0]){armed=a[0];b.textContent="Confirm inyection now";$("hint").textContent="Confirmation 2 of 2: the protocol was validated by the base's doctor before the mission.";return}
   sc={...S.nominal,t:"Completed action",m:(a[1]==="inj"?"Inyection applied: ":a[1]==="top"?"Patch applied: ":"Doe: ")+a[0].replace(/ \(.*\)/,"")+". Values back to safe range; reforced monitoring for the next 10 min."};
   render();
 }
 function nx(){
   if(hs<3){hs++;render();return}
-  hs=-1;done=true;sc={...S.nominal,l:"warn",t:"Wound sealed",m:"Local pressure stable. Ho backc to base camp for medical check-up."};render();
+  hs=-1;done=true;sc={...S.nominal,l:"warn",t:"Wound sealed",m:"Local pressure stable. Go back to base camp for medical check-up."};render();
 }
 document.querySelectorAll(".sc button").forEach(b=>b.onclick=()=>{
   document.querySelectorAll(".sc button").forEach(x=>x.classList.remove("sel"));b.classList.add("sel");
   cur=b.dataset.s;sc=S[cur];hs=-1;done=false;$("doc").classList.remove("on");render();
 });
-$("artog").onclick=e=>{ar=!ar;st.classList.toggle("noar",!ar);e.target.setAttribute("aria-pressed",ar);e.target.textContent="Realidad aumentada: "+(ar?"activada":"desactivada")};
+$("artog").onclick=e=>{ar=!ar;st.classList.toggle("noar",!ar);e.target.setAttribute("aria-pressed",ar);e.target.textContent="Augmented reality: "+(ar?"activada":"desactivada")};
 const hm=m=>Math.floor(m/60)+":"+String(m%60).padStart(2,"0");
 function res(){const t=+$("t").value,o=Math.round(100-t/480*88),p=Math.round(100-t/480*92);
   $("tt").textContent="T+"+hm(t);$("tr").textContent=hm(480-t);$("o2v").textContent=o+"%";$("pwv").textContent=p+"%";$("o2b").style.width=o+"%";$("pwb").style.width=p+"%";
-  $("lat").textContent=480-t<=60?"Regresa al hábitat: menos de 1 h de reserva":"Enlace con Tierra: 3–22 min"}
+  $("lat").textContent=480-t<=60?"Return to base camp: less than 1 h of battery":"3-22 min"}
 $("t").oninput=res;
 render();res();size();
